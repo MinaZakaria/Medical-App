@@ -1,0 +1,167 @@
+Error codes Used:
+0 : (200 success),
+1 : (500 internal server error),
+2 : (404 not found),
+3 : (400 validation error) 
+4 : (401 Un authorized)
+=======================================================================
+Authentication:
+===============
+
+ 1. login
+	URL : "http://localhost/medical/public/api/v1/guest/authenticate",
+	Method : POST,
+	Request json : Obj1,
+	Response Json : Obj2,
+
+Obj1 = {
+		"email":"admin@medical.com",
+  		"password":"123456"
+	}
+Obj2 = {
+		"error_code": 0,	
+	    	"message": ["Token generated successfully"],
+		"token":"AiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3"
+	}
+
+ 2. register
+	URL : "http://localhost/medical/public/api/v1/guest/register",
+	Method : POST,
+	Request json : Obj1,
+	Response Json : Obj2,
+
+Obj1 = {
+	  "name":"Mina",
+	  "email":"admin@medical.com",
+	  "password":"123456",
+	  "password_confirmation":"123456"
+	}
+Obj2 = {
+	  "error_code": 0,
+    	  "message": ["created successfully"]		
+	}
+
+=======================================================================
+Home Page:
+==========
+
+ 3. Get top Companies
+	URL : "http://localhost/medical/public/api/v1/guest/companies/top",
+	Method : GET,
+	Request json : {},
+	Response Json : Obj2,
+
+Obj2 =  {
+	    "error_code": 0,	
+	    "message": ["data retrieved successfully"],
+	    "data": [
+		        {
+		            "id": 5,
+		            "name": "Company 5",
+		            "logo": "uploads/companies/company_5.jpg",
+		            "start_year": 2005,
+		            "no_of_employees": 15,
+		            "website_link": "www.facebook.com/company_5",
+		            "medical_rep_salary": 5000,
+		            "history": "started at 2005",
+		            "car_policy": "car every 5 years",
+		            "created_at": null,
+		            "updated_at": null
+		        },
+		        {
+		            "id": 4,
+		            "name": "Company 4",
+		            "logo": "uploads/companies/company_4.jpg",
+		            "start_year": 2004,
+		            "no_of_employees": 14,
+		            "website_link": "www.facebook.com/company_4",
+		            "medical_rep_salary": 4000,
+		            "history": "started at 2004",
+		            "car_policy": "car every 4 years",
+		            "created_at": null,
+		            "updated_at": null
+		        },
+		        {
+		            "id": 3,
+		            "name": "Company 3",
+		            "logo": "uploads/companies/company_3.jpg",
+		            "start_year": 2003,
+		            "no_of_employees": 13,
+		            "website_link": "www.facebook.com/company_3",
+		            "medical_rep_salary": 3000,
+		            "history": "started at 2003",
+		            "car_policy": "car every 3 years",
+		            "created_at": null,
+		            "updated_at": null
+		        },
+		        {
+		            "id": 2,
+		            "name": "Company 2",
+		            "logo": "uploads/companies/company_2.jpg",
+		            "start_year": 2002,
+		            "no_of_employees": 12,
+		            "website_link": "www.facebook.com/company_2",
+		            "medical_rep_salary": 2000,
+		            "history": "started at 2002",
+		            "car_policy": "car every 2 years",
+		            "created_at": null,
+		            "updated_at": null
+		        }
+		    ]
+	}
+
+ 4. Get top Jobs
+	URL : "http://localhost/medical/public/api/v1/guest/jobs/top",
+	Method : GET,
+	Request json : {},
+	Response Json : Obj2,
+
+Obj2 =  {
+	    "error_code": 0,	
+	    "message": ["data retrieved successfully"],
+	    "data": [
+		        
+		    ]
+	}
+
+
+ 5. Get top Companies
+	URL : "http://localhost/medical/public/api/v1/guest/posts/top",
+	Method : GET,
+	Request json : {},
+	Response Json : Obj2,
+
+Obj2 =  {
+	    "error_code": 0,	
+	    "message": ["data retrieved successfully"],
+	    "data": [
+		        {
+		            "id": 5,
+		            "description": "post 5 description",
+		            "image_url": "uploads/posts/post5.jpg",
+		            "created_at": null,
+		            "updated_at": null
+		        },
+		        {
+		            "id": 4,
+		            "description": "post 4 description",
+		            "image_url": "uploads/posts/post4.jpg",
+		            "created_at": null,
+		            "updated_at": null
+		        },
+		        {
+		            "id": 3,
+		            "description": "post 3 description",
+		            "image_url": "uploads/posts/post3.jpg",
+		            "created_at": null,
+		            "updated_at": null
+		        },
+		        {
+		            "id": 2,
+		            "description": "post 2 description",
+		            "image_url": "uploads/posts/post2.jpg",
+		            "created_at": null,
+		            "updated_at": null
+		        }
+		    ]
+	}
